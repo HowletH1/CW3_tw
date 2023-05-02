@@ -27,7 +27,7 @@ def sorted_operations(executed):
 def hide_numbers(data):
     number = data.split(' ')[-1]
     if len(number) == 20:
-        return f'Cчет **{number[16:]}'
+        return f'Счет **{number[16:]}'
     else:
         card = ' '.join(data.split(" ")[:-1])
         return f'{card} {number[0:4]} {number[4:6]}** **** {number[12:]}'
@@ -42,8 +42,7 @@ def last_operations(last):
             operation = hide_numbers(item['from'])
         except KeyError:
             operation = ''
-        operation_list.append(f"""
-        {d_format} {item['description']} 
+        operation_list.append(f"""{d_format} {item['description']} 
 {operation} -> {hide_numbers(item['to'])}
 {item["operationAmount"]['amount']} {item['operationAmount']['currency']['name']}\n""")
     return operation_list
