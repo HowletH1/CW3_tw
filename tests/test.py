@@ -4,7 +4,7 @@ from utils import *
 def test_select():
     assert select([{"state": "EXECUTED"}, {"state": "EXECUTED"}, {"state": "CANCELED"}]) == \
            [{"state": "EXECUTED"}, {"state": "EXECUTED"}]
-    assert select([{"state": "EXECUTED"}, {"state": "EXECUTED"}, {"state": " "}]) == \
+    assert select([{"state": "EXECUTED"}, {"state": "EXECUTED"}, {"stat": " "}]) == \
            [{"state": "EXECUTED"}, {"state": "EXECUTED"}]
 
 
